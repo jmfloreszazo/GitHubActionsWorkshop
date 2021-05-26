@@ -1,0 +1,13 @@
+name: VariableDemo
+on: [push] 
+env:
+  env_var1: "var1" 
+jobs:
+  VariableUsageJob:
+    runs-on: ubuntu-latest 
+    env:
+      job_var1: "job_var1" 
+    steps:
+      - name: $env_var1, $job_var1, $step_var1
+        env:
+          step_var1: "Step1"
