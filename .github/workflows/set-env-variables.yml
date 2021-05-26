@@ -1,0 +1,19 @@
+name: SetEnvVariable
+on: [push] 
+env:
+  env_var1: "env_var1"
+jobs:
+  VarJob:
+    runs-on: ubuntu-latest 
+    env:
+      job_var1: "job_var1"
+    steps:
+      - name: $env_var1, $job_var1, $step_var1
+        env:
+          step_var1: "step_var1"
+      - name: Set env_var1 value
+        run: echo "::set-env name=env_var1::env_var2"
+      - name: Set new_var Varaible
+        run: echo "::set-env name=new_var::newvarvalue"
+      - name: Using Variables
+        run:  $env_var1, $job_var1, $step_var1, $new_var
