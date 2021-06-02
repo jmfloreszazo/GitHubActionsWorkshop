@@ -1,14 +1,14 @@
 on: [workflow_dispatch]
 
 jobs:
-  job:
+  custo_action_job:
     runs-on: ubuntu-latest
-    name: CustomActionWithJS
+    name: Custom Action With JS
     steps:
     - name: Set Greeting
       id: GitHubActionsWorkshopCustomAction
       uses: jmfloreszazo/GitHubActionsWorkshopCustomAction@v1
       with:
-        greeting: 'Hi custom action!'
+        greeting: 'Hi custom action'
     - name: Output
       run: echo "Output is ${{ steps.GitHubActionsWorkshopCustomAction.outputs.timeofmessage }}"
