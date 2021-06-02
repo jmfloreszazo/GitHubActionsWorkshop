@@ -1,12 +1,11 @@
-name: CustomActionWithJS
-
 on: [workflow_dispatch]
 
 jobs:
   job:
     runs-on: ubuntu-latest
+    name: CustomActionWithJS
     steps:
-    - name: My first JS custom action step
+    - name: Set Greeting
       id: GitHubActionsWorkshopCustomAction
       uses: jmfloreszazo/GitHubActionsWorkshopCustomAction@v1
       with:
